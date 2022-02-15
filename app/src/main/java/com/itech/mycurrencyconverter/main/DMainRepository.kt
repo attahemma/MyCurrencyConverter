@@ -8,9 +8,9 @@ import javax.inject.Inject
 class DMainRepository @Inject constructor(
     private val api: CurrencyApi
 ) : MainRepository{
-    override suspend fun getRates(base: String): Resource<CurrencyResponse> {
+    override suspend fun getRates(access_key: String): Resource<CurrencyResponse> {
         return try {
-            val response = api.getRates(base)
+            val response = api.getRates(access_key)
             val result = response.body()
             if (response.isSuccessful && result != null ){
                 Resource.Success(result)

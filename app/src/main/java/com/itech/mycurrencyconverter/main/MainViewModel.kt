@@ -40,7 +40,7 @@ class MainViewModel @ViewModelInject constructor(
         }
         viewModelScope.launch(dispatchers.io){
             conversion.value = CurrencyEvent.Loading
-            when(val rateResponse = repository.getRates(fromCurr)){
+            when(val rateResponse = repository.getRates("cacbb86e4611fef1d72700f36a398d3e")){
                 is Resource.Error -> conversion.value = CurrencyEvent.Failure(rateResponse.message!!)
                 is Resource.Success -> {
                     val rates = rateResponse.data!!.rates

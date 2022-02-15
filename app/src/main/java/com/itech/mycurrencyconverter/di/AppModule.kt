@@ -2,14 +2,19 @@ package com.itech.mycurrencyconverter.di
 
 import com.itech.mycurrencyconverter.BuildConfig
 import com.itech.mycurrencyconverter.data.CurrencyApi
+import com.itech.mycurrencyconverter.main.DMainRepository
+import com.itech.mycurrencyconverter.main.MainRepository
+import com.itech.mycurrencyconverter.util.DispatcherProvider
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ApplicationComponent
+
+import dagger.hilt.components.SingletonComponent
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 import javax.inject.Singleton
 
 private val Any.java: Class<CurrencyApi>?
@@ -18,17 +23,34 @@ private val Any.java: Class<CurrencyApi>?
     }
 
 @Module
-@InstallIn(ApplicationComponent::class)
+@InstallIn(SingletonComponent::class)
 object AppModule {
 
     @Singleton
     @Provides
     fun provideCurrencyApi() : CurrencyApi {
-        val retrofitInstance = Retrofit.Builder()
+        return Retrofit.Builder()
             .baseUrl(BuildConfig.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
-            .build()
-        return retrofitInstance.create(CurrencyApi::class.java)
+            .build().create(CurrencyApi::class.java)
+    }
+
+    @Singleton
+    @Provides
+    fun provideMainRepository(api: CurrencyApi): MainRepository = DMainRepository(api)
+
+    @Singleton
+    @Provides
+    fun dispatcherProviders(): DispatcherProvider = object : DispatcherProvider {
+        override val main: CoroutineDispatcher
+            get() = Dispatchers.Main
+        override val io: CoroutineDispatcher
+            get() = Dispatchers.IO
+        override val default: CoroutineDispatcher
+            get() = Dispatchers.Default
+        override val unconfined: CoroutineDispatcher
+            get() = Dispatchers.Unconfined
+
     }
 
 }

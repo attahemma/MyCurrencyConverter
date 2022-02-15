@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:padding="16dp"
+    >
+
+    <include
+        android:id="@+id/appbar"
+        layout="@layout/app_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/appbar"
+        >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="248dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/app_logo" />
+
+        <LinearLayout
+            android:id="@+id/editfield1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:background="@drawable/edit_bg"
+            app:layout_constraintTop_toBottomOf="@id/logo"
+            app:layout_constraintStart_toStartOf="@id/logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="32dp"
+            >
+
+            <EditText
+                android:id="@+id/ed_firstAmount"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:background="@color/transparent"
+                android:hint="value"
+                android:textSize="@dimen/text_14"
+                android:padding="5dp"
+                android:textColor="@color/black"
+                />
+
+            <TextView
+                android:id="@+id/ed_curreny"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:text="PLN"
+                android:textAlignment="textEnd"
+                android:textColor="@color/gray"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/editfield2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:background="@drawable/edit_bg"
+            app:layout_constraintTop_toBottomOf="@id/editfield1"
+            app:layout_constraintStart_toStartOf="@id/logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"
+            >
+
+            <EditText
+                android:id="@+id/ed_secondAmount"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:background="@color/transparent"
+                android:hint="value"
+                android:textSize="@dimen/text_14"
+                android:padding="5dp"
+                android:textColor="@color/black"
+                />
+
+            <TextView
+                android:id="@+id/ed_curreny2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:text="PLN"
+                android:textAlignment="textEnd"
+                android:textColor="@color/gray"
+                />
+
+
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/dropdown_wrapper"
+            app:layout_constraintTop_toBottomOf="@id/editfield2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <com.google.android.material.textfield.TextInputLayout
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_height="wrap_content"
+                app:boxStrokeColor="@color/gray"
+                app:boxStrokeWidth="1dp"
+                app:hintTextColor="@color/gray"
+                android:layout_marginTop="8dp"
+                app:layout_constraintWidth_percent="0.4"
+                android:hint="Currency"
+                android:id="@+id/currency1_wrapper"
+                >
+
+                <AutoCompleteTextView
+                    android:id="@+id/currency1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppins"
+                    android:inputType="none"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/convert"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/currency2_wrapper"
+                app:layout_constraintStart_toEndOf="@id/currency1_wrapper"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                app:layout_constraintWidth_percent="0.4"
+                android:layout_height="wrap_content"
+                app:boxStrokeColor="@color/gray"
+                app:boxStrokeWidth="1dp"
+                app:hintTextColor="@color/gray"
+                android:layout_marginTop="8dp"
+                android:hint="Currency"
+                android:id="@+id/currency2_wrapper"
+                >
+
+                <AutoCompleteTextView
+                    android:id="@+id/currency2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppins"
+                    android:inputType="none"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/convert_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/dropdown_wrapper"
+            android:text="@string/btn_convert"
+            android:textAllCaps="false"
+            android:fontFamily="@font/poppins"
+            android:theme="@style/myMaterialBtnGreen"
+            android:padding="10dp"
+            android:layout_marginTop="16dp"
+            />
+
+        <TextView
+            android:id="@+id/historical"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/convert_btn"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="Mid-market exchange rate at 13:38 UTC"
+            android:layout_marginTop="16dp"
+            android:textAlignment="center"
+            android:fontFamily="@font/poppins"
+            android:textSize="@dimen/text_14"
+            app:layout_constraintWidth_percent="0.8"
+            android:layout_width="0dp"
+            android:textColor="@color/my_primary_dark"
+            />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            app:layout_constraintWidth_percent="0.1"
+            android:src="@drawable/info_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/historical"
+            app:layout_constraintTop_toBottomOf="@id/convert_btn"
+            android:layout_marginTop="16dp"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

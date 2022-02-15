@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">MyCurrencyConverter</string>
+    <string name="sign_up">Sign up</string>
+    <string name="btn_convert">Convert</string>
+
+    <string-array name="currencies">
+        <item>ALL</item>
+        <item>DZD</item>
+        <item>AOA</item>
+        <item>ARS</item>
+        <item>AMD</item>
+        <item>AUD</item>
+        <item>EUR</item>
+        <item>AZN</item>
+        <item>BHD</item>
+        <item>BBD</item>
+        <item>BYN</item>
+        <item>BMD</item>
+        <item>BOB</item>
+        <item>BAM</item>
+        <item>CVE</item>
+        <item>KHR</item>
+        <item>XAF</item>
+        <item>CAD</item>
+        <item>USD</item>
+        <item>GBP</item>
+        <item>KES</item>
+        <item>MYR</item>
+        <item>NGN</item>
+        <item>VND</item>
+        <item>JPY</item>
+        <item>INR</item>
+    </string-array>
+</resources>

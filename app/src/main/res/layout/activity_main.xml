@@ -27,8 +27,8 @@
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="248dp"
-        android:layout_height="125dp"
+        android:layout_width="240dp"
+        android:layout_height="120dp"
         android:layout_marginTop="32dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -120,6 +120,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="0dp"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_height="wrap_content"
                 app:boxStrokeColor="@color/gray"
@@ -158,6 +159,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 app:layout_constraintWidth_percent="0.4"
                 android:layout_height="wrap_content"
+                android:layout_width="0dp"
                 app:boxStrokeColor="@color/gray"
                 app:boxStrokeWidth="1dp"
                 app:hintTextColor="@color/gray"

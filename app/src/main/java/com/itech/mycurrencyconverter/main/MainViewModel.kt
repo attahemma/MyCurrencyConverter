@@ -1,18 +1,20 @@
 package com.itech.mycurrencyconverter.main
 
-import androidx.hilt.lifecycle.ViewModelInject
+
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.itech.mycurrencyconverter.data.models.Rates
 import com.itech.mycurrencyconverter.util.DispatcherProvider
 import com.itech.mycurrencyconverter.util.Resource
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import java.lang.Math.round
+import javax.inject.Inject
 
-
-class MainViewModel @ViewModelInject constructor(
+@HiltViewModel
+class MainViewModel @Inject constructor(
      private val repository: MainRepository,
      private val dispatchers: DispatcherProvider
 ): ViewModel() {

@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity() {
     private fun setCurrencyToSpinner1() {
 
         //toCurr = bindings.currency2.editableText.toString()
-        val adapter =   ArrayAdapter(this,R.layout.spinner_item, mutableListOf(R.array.currencies))
+        val adapter =   ArrayAdapter(this,R.layout.spinner_item, listOf(R.array.currencies))
         bindings.currency1.setAdapter(adapter)
         bindings.currency1.setOnItemClickListener { adapterView, view, i, l ->
             Log.d("Converter", bindings.currency1.text.get(i).toString())}
@@ -75,7 +75,7 @@ class MainActivity : AppCompatActivity() {
     private fun setCurrencyToSpinner2() {
         //toCurr = bindings.currency1.editableText.toString()
 
-        val adapter =   ArrayAdapter(this,R.layout.spinner_item, mutableListOf(R.array.currencies))
+        val adapter =   ArrayAdapter(this,R.layout.spinner_item, listOf(R.array.currencies))
         bindings.currency2.setAdapter(adapter)
         bindings.currency2.setOnItemClickListener { adapterView, view, i, l ->
             Log.d("Converter", bindings.currency1.text.get(i).toString())}

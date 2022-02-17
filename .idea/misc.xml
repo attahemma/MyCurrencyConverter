@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Smart Dell/AndroidStudioProjects/MyCurrencyConverter/app/src/main/res/drawable/app_bar_bg.xml" value="0.228" />
+        <entry key="..\:/Users/Smart Dell/AndroidStudioProjects/MyCurrencyConverter/app/src/main/res/drawable/bg_round.xml" value="0.228" />
         <entry key="..\:/Users/Smart Dell/AndroidStudioProjects/MyCurrencyConverter/app/src/main/res/layout/activity_main.xml" value="0.18125" />
         <entry key="..\:/Users/Smart Dell/AndroidStudioProjects/MyCurrencyConverter/app/src/main/res/layout/app_bar.xml" value="0.2849200833912439" />
         <entry key="..\:/Users/Smart Dell/AndroidStudioProjects/MyCurrencyConverter/app/src/main/res/layout/spinner_item.xml" value="0.2" />

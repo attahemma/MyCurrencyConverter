@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.appcompat.app.ActionBar
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.snackbar.Snackbar
 import com.itech.mycurrencyconverter.databinding.ActivityMainBinding
@@ -28,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         bindings = ActivityMainBinding.inflate(layoutInflater)
         setContentView(bindings.root)
+        setupActionBar()
         progressDialog = ProgressDialog(this);
         setCurrencyToSpinner1()
 
@@ -65,6 +67,15 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    private fun setupActionBar() {
+        val actionBar: ActionBar? = this.supportActionBar
+        actionBar?.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM)
+        actionBar?.setDisplayShowCustomEnabled(true)
+        actionBar?.setCustomView(R.layout.app_bar)
+        actionBar?.elevation = 1.8f
+        actionBar?.setBackgroundDrawable(getDrawable(R.drawable.app_bar_bg))
     }
 
     private fun setCurrencyToSpinner1() {

@@ -1,6 +1,6 @@
 # MyCurrencyConverter
 
-A currency conver application built on:
+A currency converter application built on:
 Architecture Components like
 Room
 MVVM

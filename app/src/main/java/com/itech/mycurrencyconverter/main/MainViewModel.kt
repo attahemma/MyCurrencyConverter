@@ -1,6 +1,7 @@
 package com.itech.mycurrencyconverter.main
 
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.itech.mycurrencyconverter.data.models.Rates
@@ -46,6 +47,7 @@ class MainViewModel @Inject constructor(
                 is Resource.Error -> conversion.value = CurrencyEvent.Failure(rateResponse.message!!)
                 is Resource.Success -> {
                     val rates = rateResponse.data!!.rates
+                    Log.d("RATES ==>", rateResponse.data.toString())
                     val rate = getRateForCurrency(toCurr, rates)
                     if (rate == null){
                         conversion.value = CurrencyEvent.Failure("an error occured")
@@ -62,31 +64,31 @@ class MainViewModel @Inject constructor(
 
     private fun getRateForCurrency(currency: String, rates: Rates) = when (currency) {
         "ALL" -> rates.ALL
-        "DZD" -> rates.ALL
-        "AOA" -> rates.ALL
-        "ARS" -> rates.ALL
-        "AMD" -> rates.ALL
-        "AUD" -> rates.ALL
-        "EUR" -> rates.ALL
-        "AZN" -> rates.ALL
-        "BHD" -> rates.ALL
-        "BBD" -> rates.ALL
-        "BYN" -> rates.ALL
-        "BMD" -> rates.ALL
-        "BOB" -> rates.ALL
-        "BAM" -> rates.ALL
-        "CVE" -> rates.ALL
-        "KHR" -> rates.ALL
-        "XAF" -> rates.ALL
-        "CAD" -> rates.ALL
-        "USD" -> rates.ALL
-        "GBP" -> rates.ALL
-        "KES" -> rates.ALL
-        "MYR" -> rates.ALL
-        "NGN" -> rates.ALL
-        "VND" -> rates.ALL
-        "JPY" -> rates.ALL
-        "INR" -> rates.ALL
+        "DZD" -> rates.DZD
+        "AOA" -> rates.AOA
+        "ARS" -> rates.ARS
+        "AMD" -> rates.AMD
+        "AUD" -> rates.AUD
+        "EUR" -> rates.EUR
+        "AZN" -> rates.AZN
+        "BHD" -> rates.BHD
+        "BBD" -> rates.BBD
+        "BYN" -> rates.BYN
+        "BMD" -> rates.BMD
+        "BOB" -> rates.BOB
+        "BAM" -> rates.BAM
+        "CVE" -> rates.CVE
+        "KHR" -> rates.KHR
+        "XAF" -> rates.XAF
+        "CAD" -> rates.CAD
+        "USD" -> rates.USD
+        "GBP" -> rates.GBP
+        "KES" -> rates.KES
+        "MYR" -> rates.MYR
+        "NGN" -> rates.NGN
+        "VND" -> rates.VND
+        "JPY" -> rates.JPY
+        "INR" -> rates.INR
         else -> null
     }
 }

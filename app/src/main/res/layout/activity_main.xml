@@ -32,7 +32,10 @@
         android:layout_marginTop="32dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/app_logo" />
+        tools:srcCompat="@drawable/app_logo"
+        android:src="@drawable/app_logo"
+        android:visibility="visible"
+        android:contentDescription="@string/logo_home_screen_reader" />
 
         <LinearLayout
             android:id="@+id/editfield1"
@@ -56,6 +59,7 @@
                 android:hint="value"
                 android:textSize="@dimen/text_14"
                 android:padding="5dp"
+                android:inputType="number"
                 android:textColor="@color/black"
                 />
 
@@ -93,6 +97,7 @@
                 android:textSize="@dimen/text_14"
                 android:padding="5dp"
                 android:textColor="@color/black"
+                android:editable="false"
                 />
 
             <TextView
@@ -128,7 +133,7 @@
                 app:hintTextColor="@color/gray"
                 android:layout_marginTop="8dp"
                 app:layout_constraintWidth_percent="0.4"
-                android:hint="Currency"
+                android:hint="from"
                 android:id="@+id/currency1_wrapper"
                 >
 
@@ -164,7 +169,7 @@
                 app:boxStrokeWidth="1dp"
                 app:hintTextColor="@color/gray"
                 android:layout_marginTop="8dp"
-                android:hint="Currency"
+                android:hint="to"
                 android:id="@+id/currency2_wrapper"
                 >
 

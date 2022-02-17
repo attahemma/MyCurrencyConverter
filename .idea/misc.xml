@@ -4,6 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Smart Dell/AndroidStudioProjects/MyCurrencyConverter/app/src/main/res/layout/activity_main.xml" value="0.18125" />
+        <entry key="..\:/Users/Smart Dell/AndroidStudioProjects/MyCurrencyConverter/app/src/main/res/layout/spinner_item.xml" value="0.2" />
+        <entry key="..\:/Users/Smart Dell/AndroidStudioProjects/MyCurrencyConverter/app/src/main/res/layout/spinner_item2.xml" value="0.2" />
+        <entry key="..\:/Users/Smart Dell/AndroidStudioProjects/MyCurrencyConverter/app/src/main/res/xml/network_security_config.xml" value="0.18125" />
       </map>
     </option>
   </component>

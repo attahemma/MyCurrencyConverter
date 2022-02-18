@@ -8,8 +8,8 @@ MutableStateFlow,
 StateFlow
 
 and using:
-Retrofit
-Hilt
+Retrofit,
+Hilt and more
 
  ## 📸 Screenshots
 ---------------------------------

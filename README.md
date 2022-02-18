@@ -2,9 +2,10 @@
 
 A currency converter application built on:
 Architecture Components like
-Room
-MVVM
-FlowData
+Room,
+MVVM,
+MutableStateFlow,
+StateFlow
 
 and using:
 Retrofit
